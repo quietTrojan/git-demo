@@ -1,0 +1,9 @@
+.Wrap{
+  height: 500px;
+  width: 1000px;
+  margin: 20px auto;
+  background-color:red;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
