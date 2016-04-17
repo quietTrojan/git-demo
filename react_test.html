@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>react测试页面</title>
+  <script type="text/javascript" src="js/lib/react-15.0.1/build/react.js"></script>
+  <script type="text/javascript" src="js/lib/react-15.0.1/build/react-dom.js"></script>
+  <script type="text/javascript" src="js/lib/react-15.0.1/build/react.js"></script>
+  <script src="js/lib/browser.min.js"></script>
+</head>
+<body>
+  <div id="container" class="container"></div>
+  <script type="text/babel">
+    var Counter=React.createClass({
+      getInitialState:function(){
+        return{
+          count:0
+        };
+      },
+      increment:function(){
+        this.setState({ count:this.state.count+1 });
+      },
+      render:function(){
+        return(
+          <div>
+            <h1>数量：{this.state.count}</h1>
+            <button onClick={this.increment}>+1</button>
+          </div>
+        )
+      }
+    });
+    ReactDOM.render(<Counter/>,document.getElementById('container'));
+  </script>
+  <!-- <a href="javascript:;" onclick="alert('nihao')">click me</a> -->
+</body>
+</html>
