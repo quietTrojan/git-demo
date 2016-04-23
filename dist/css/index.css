@@ -1,9 +1,17 @@
-.Wrap{
-  height: 500px;
-  width: 1000px;
-  margin: 20px auto;
-  background-color:red;
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.testDiv {
+  height: 0px;
+  width: 100%;
+  padding-top: 100%;
+  background-repeat: no-repeat;
+  background-image: url("../images/small.jpg");
+  background-size: 100%;
+}
+@media (min-width: 600px) {
+  .testDiv {
+    background-image: url("../images/big.jpg");
+  }
 }
