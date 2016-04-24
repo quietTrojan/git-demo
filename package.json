@@ -10,12 +10,17 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-clean-css": "^2.0.6",
     "gulp-concat": "^2.6.0",
     "gulp-file-include": "^0.13.7",
+    "gulp-imagemin": "^2.4.0",
     "gulp-less": "^3.0.5",
+    "gulp-sass": "^2.3.1",
     "gulp-style-inject": "0.0.3"
   },
   "dependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "imagemin-pngquant": "^4.2.2"
   }
 }
