@@ -8,6 +8,7 @@ var prefix = require('gulp-autoprefixer');
 var cleanCSS = require('gulp-clean-css');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
+var csscomb = require('gulp-csscomb');
 //定义一个testLess任务（自定义任务名称）
 /*gulp.task('less_css', function () {
     return gulp.src(['src/less/!*.less','!src/less/reuseClass.less']) //该任务针对的文件
@@ -15,12 +16,18 @@ var pngquant = require('imagemin-pngquant');
         .pipe(gulp.dest('dist/css/')); //将会在src/css下生成index.css
     console.log('less编译',new Date().getTime());
 });*/
+function handleError(err) {
+    console.log(err.toString());
+    this.emit('end');
+}
 
 gulp.task('sass_css', function () {
+
     return gulp.src(['src/sass/*.scss']) //该任务针对的文件
-        .pipe(sass().on('error', sass.logError))
+        .pipe(sass()).on('error', handleError)
         .pipe(prefix())
-        .pipe(cleanCSS())
+        //.pipe(csscomb())
+        //.pipe(cleanCSS())
         .pipe(gulp.dest('dist/css/')); //将会在src/css下生成index.css
     console.log('sass编译',new Date().getTime());
 });
